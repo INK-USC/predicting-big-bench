@@ -49,8 +49,8 @@ To create them, go to `data/bigbench/<split_name>` and run the `prep.py` within 
 
 If you have any question, please submit an issue, or reach out to Qinyuan (qinyuany@usc.edu).
 
-<details>
-<summary>BibTeX</summary>
+If you used our code in your study, or find our paper useful, please cite us use the following bib entry:
+
 
 ```
 @article{ye2023predictable,
@@ -60,4 +60,3 @@ If you have any question, please submit an issue, or reach out to Qinyuan (qinyu
   year={2023}
 }
 ```
-</details>

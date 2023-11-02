@@ -1,1 +1,7 @@
 data/bigbench/l*
+filtered*.csv
+*pred.csv
+__pycache__
+.DS_Store
+output
+scripts
