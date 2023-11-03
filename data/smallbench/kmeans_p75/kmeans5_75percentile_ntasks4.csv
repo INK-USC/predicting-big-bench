@@ -1,0 +1,6 @@
+task_list
+"['bbq_lite_json:bbq_lite_json_sexual_orientation_disambig', 'natural_instructions:subtask029_winogrande_full_object', 'gem:xsum', 'linguistic_mappings:question_formation_json']"
+"['linguistic_mappings:question_formation_json', 'natural_instructions:subtask029_winogrande_full_object', 'snarks', 'arithmetic:2_digit_multiplication']"
+"['arithmetic:2_digit_multiplication', 'natural_instructions:subtask029_winogrande_full_object', 'bbq_lite_json:bbq_lite_json_religion_disambig', 'natural_instructions:subtask025_cosmosqa_incorrect_answer_generation']"
+"['gem:xsum', 'natural_instructions:subtask048_multirc_question_generation', 'bbq_lite_json:bbq_lite_json_religion_disambig', 'arithmetic:2_digit_multiplication']"
+"['bbq_lite_json:bbq_lite_json_religion_disambig', 'gem:xsum', 'natural_instructions:subtask029_winogrande_full_object', 'linguistic_mappings:question_formation_json']"

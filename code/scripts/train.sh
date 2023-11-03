@@ -1,3 +1,5 @@
+cd ..
+
 setting="l1" # select from "l1", "l2_1", "l2_2", "l3", "l4"
 model_arch="mlp" # select from "bsl_model_task", "svd", "task_task_knn", "model_model_knn","random_forest", "xgb", "mlp"
 n_trials=200 # random hyperparameter combinations to try

@@ -22,7 +22,8 @@ pip install -r requirements.txt
 
 #### Pre-processing (Optional)
 
-We've included the pre-processed BIG-bench experiment records in `data/bigbench/`. If you need to rerun the pre-processing by yourself, see below.
+We've included the pre-processed BIG-bench experiment records in `data/bigbench/`. If you need to rerun the pre-processing by yourself, please use the script below. The whole process will take ~2hrs.
+
 
 ```bash
 # clone BIG-bench in a separate folder
@@ -35,7 +36,6 @@ python big_bench.py
 # filter the logs to formulat the dataset
 python filter_big_bench.py
 ```
-The whole process will take ~2hrs.
 
 #### Create different train-test splits
 In the paper we defined 5 different ways to create train-test splits, named as `L1/L2.1/L2.2/L3/L4`. 
@@ -43,11 +43,12 @@ To create them, go to `data/bigbench/<split_name>` and run the `prep.py` within 
 
 ### Training Performance Prediction Models
 
-`code/example.sh` contains an example script to reproduce experiments in Sec. 3-4 of the paper.
+`code/scripts/train.sh` contains an example script to reproduce experiments in Sec. 3-4 of the paper.
 
-The script will first automatically tune hyperparameters on the `train_file` and `dev_file`. 
-Then it will run the best set of hyperparameters on all folds in the `../data/bigbench/${setting}/` directory.
-The predictions will be saved where the data files are. The test set predictions will be saved to `test_mlp_pred.csv` in the following example.
+* The script will first automatically tune hyperparameters on the `train_file` and `dev_file`. 
+* Then it will run the best set of hyperparameters on all folds in the `../data/bigbench/${setting}/` directory.
+* The mean and std over all folds will be printed out at the end of the program.
+* The predictions will be saved where the data files are. For example, the test set predictions from a MLP model will be saved to `test_mlp_pred.csv`.
 
 
 ```bash
@@ -71,6 +72,20 @@ python cli.py \
 
 ### Searching for "small-bench"
 
+#### Step 1: Search
+* `code/scripts/search_random5000.sh` contains the script to reproduce "Best of 5000" described in the paper.
+* `code/scripts/search_greedy.sh` contains the script to reproduce greedy search described in the paper.
+* The code supports more search methods such as beam search, simulated annealing, etc. You can specify this in `--search_mode`. Also please make sure to check `cli.py` for args specific to a method.
+
+#### Step 2: Post-process
+* We include the post-processing scripts in `data/smallbench`. They are named as `prep.py`
+* The post-processing results are saved to a csv file. We have included search results of Best of 5000, Greedy Search, K-means, K-means + Task Value in `data/smallbench`.
+* For example, `data/smallbench/random5000/random5000.csv` is the search results for the "Best of 5000" method.
+
+#### Step 3: Eval
+* `code/scripts/search_eval_bbhard_and_bblite.sh` contains the scripts to evaluate the predictions when BIG-bench Hard / Lite are used as the "small-bench" to recover performance on remaining tasks.
+* `code/scripts/search_eval_greedy.sh` contains the scripts to evaluate the search results of greedy search. By changing the `--selected_tasks` args you can evaluate search results of other methods by pointing to the corresponding csv file.
+* Evaluation results can be found in the `--output_dir` that is specified in the script. The file that ends with `_summary.csv` contains the mean and std of 30-fold cross validation.
 
 ### Contact Us
 
