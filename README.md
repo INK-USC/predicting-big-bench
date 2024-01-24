@@ -1,6 +1,6 @@
 ## How Predictable Are Large Language Model Capabilities? A Case Study on BIG-bench
 
-This repository contains code for our paper "How Predictable Are Large Language Model Capabilities? A Case Study on BIG-bench" (EMNLP Findings 2023) [[Preprint]](https://arxiv.org/abs/2305.14947).
+This repository contains code for our paper "How Predictable Are Large Language Model Capabilities? A Case Study on BIG-bench" (EMNLP Findings 2023). [[Paper]](https://aclanthology.org/2023.findings-emnlp.503/) [[Video]](https://youtu.be/cycBv5Pbn50) [[Slides]](https://yeqy.xyz/src/BIG-bench-analysis/BIG-bench-analysis-slides.pdf) [[Poster]](https://yeqy.xyz/src/BIG-bench-analysis/BIG-bench-analysis-poster.pdf) [[Tweet]](https://x.com/qinyuan_ye/status/1722682948066193441?s=20)
 
 ### Quick Links
 - [Environment](#environment)
@@ -91,14 +91,29 @@ python cli.py \
 
 If you have any question, please submit an issue, or reach out to Qinyuan (qinyuany@usc.edu).
 
-If you used our code in your study, or find our paper useful, please cite us use the following bib entry:
+If you used our code in your study, or find our paper useful, please cite us with the bibkey `ye-etal-2023-predictable` in the official ACL Anthology, or use the following BibTeX:
 
+<details>
+<summary>BibTeX</summary>
 
 ```
-@article{ye2023predictable,
-  title={How Predictable Are Large Language Model Capabilities? A Case Study on BIG-bench},
-  author={Ye, Qinyuan and Fu, Harvey Yiyun and Ren, Xiang and Jia, Robin},
-  journal={arXiv preprint arXiv:2305.14947},
-  year={2023}
+@inproceedings{ye-etal-2023-predictable,
+    title = "How Predictable Are Large Language Model Capabilities? A Case Study on {BIG}-bench",
+    author = "Ye, Qinyuan  and
+      Fu, Harvey  and
+      Ren, Xiang  and
+      Jia, Robin",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.findings-emnlp.503",
+    doi = "10.18653/v1/2023.findings-emnlp.503",
+    pages = "7493--7517",
 }
 ```
+</details>
